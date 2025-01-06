@@ -1,22 +1,16 @@
-# Agence de voyage en Nature 
+# Agence de voyage 
 
 ## 📄 Description
-C'est un site static d'une agence de voyage spécialisé dans la nature. Dans le cadre d'une formation fait sur udemy avec *jonas schmedtmann*. 
+C'est un site static d'une agence de voyage qui propose hotêl et activité. Dans le cadre d'une formation fait sur udemy avec *jonas schmedtmann*. 
 
 
 ## 🎥 Démo Visuelle
+![Capture d'écran 2025-01-06 202937](https://github.com/user-attachments/assets/54f12396-0570-43ee-a1b4-bf720ac83ef0)
 
-![Capture d'écran 2025-01-06 1](https://github.com/user-attachments/assets/78ce8673-1612-4bf1-937e-bdaac1c0ef5c)
-![Capture d'écran 2025-01-06 2](https://github.com/user-attachments/assets/383947cd-4609-4e43-ba89-8252faa14719)
-![Capture d'écran 2025-01-06 3](https://github.com/user-attachments/assets/75490e5a-8f02-401f-9d42-2d9ca6e2760c)
-![Capture d'écran 2025-01-06 4](https://github.com/user-attachments/assets/0bc9db03-9378-4024-9e40-a70cd557a873)
 
 ## ✨ Fonctionnalités
 
-- [x] superposition des images et au survole d'une images elle passe en première place   
-- [x] cartes de rotation, au survole d'une des cartes elle tourne sur elle même avec un effet de profondeur
-- [x] formulaire d'inscription, avec des boutons radio personnalisés
-- [x] video en arrrière plan
+- [x] animations au survole des élémenents
 - [x] testimonials
 
 
