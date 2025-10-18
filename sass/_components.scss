@@ -1,6 +1,18 @@
 .logo {
   height: 3.25rem;
   margin-left: 2rem;
+
+  @media only screen and (max-width: $bp-small) {
+    order: 0;
+    margin-left: 0;
+    margin-bottom: 1rem;
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    order: 0;
+    margin-left: 0;
+    margin-bottom: 0;
+  }
 }
 
 .search {
@@ -10,10 +22,23 @@
   align-items: center;
   justify-content: center;
 
-  @media only screen and (max-width:$bp-smallest) {
+  @media only screen and (max-width: $bp-medium) {
+    flex: 0 0 50%;
+    margin: 0 1rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    order: 1;
+    flex: 0 0 100%;
+    margin: 0;
+    width: 100%;
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
     order: 1;
     background-color: var(--color-grey-light-2);
     flex: 0 0 100%;
+    width: 100%;
   }
 
   &__input {
@@ -68,12 +93,32 @@
   align-items: center;
   align-self: stretch;
 
+  @media only screen and (max-width: $bp-small) {
+    order: 2;
+    justify-content: center;
+    width: 100%;
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    order: 2;
+    justify-content: space-around;
+    width: 100%;
+  }
+
   & > * {
     padding: 0 2rem;
     cursor: pointer;
     height: 100%;
     display: flex;
     align-items: center;
+
+    @media only screen and (max-width: $bp-small) {
+      padding: 0 1.5rem;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      padding: 0 1rem;
+    }
   }
 
   & > *:hover {
@@ -226,7 +271,11 @@
   text-align: center;
   padding: 2.5rem;
 
-  @media only screen and (max-width:$bp-medium) {
+  @media only screen and (max-width: $bp-medium) {
+    display: none;
+  }
+
+  @media only screen and (max-width: $bp-small) {
     display: none;
   }
 }
@@ -234,21 +283,42 @@
 .gallery {
   display: flex;
 
+  @media only screen and (max-width: $bp-small) {
+    flex-direction: column;
+  }
+
   &--img {
     width: 100%;
     display: block;
     transition: all 0.2s;
+
+    @media only screen and (max-width: $bp-small) {
+      height: 25rem;
+      object-fit: cover;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      height: 20rem;
+    }
 
     &:hover {
       transform: scale(1.05);
       box-shadow: var(--shadow-dark);
       border-radius: 3px;
       z-index: 2;
+
+      @media only screen and (max-width: $bp-small) {
+        transform: none;
+      }
     }
   }
 
   &:hover &--img:not(:hover) {
     z-index: -2;
+
+    @media only screen and (max-width: $bp-small) {
+      z-index: auto;
+    }
   }
 }
 
@@ -423,6 +493,16 @@
   display: flex;
   flex-wrap: wrap;
 
+  @media only screen and (max-width: $bp-small) {
+    padding: 2rem 0;
+    margin: 2rem 0;
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    padding: 1.5rem 0;
+    margin: 1.5rem 0;
+  }
+
   &:hover &__item::before {
     transform: rotate(360deg);
   }
@@ -430,6 +510,15 @@
   &__item {
     flex: 0 0 50%;
     line-height: 3rem;
+
+    @media only screen and (max-width: $bp-small) {
+      flex: 0 0 100%;
+      line-height: 2.5rem;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      line-height: 2rem;
+    }
 
     &::before {
       content: "";
@@ -446,7 +535,7 @@
       transition: all 0.2s;
     }
 
-    @media only screen and (max-width:$bp-little) {
+    @media only screen and (max-width: $bp-little) {
       font-size: 0.9rem;
     }
   }
@@ -458,12 +547,26 @@
   display: flex;
   align-items: center;
 
+  @media only screen and (max-width: $bp-small) {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
   &__count {
     margin-right: auto;
+
+    @media only screen and (max-width: $bp-small) {
+      margin-right: 0;
+    }
   }
 
   &__friends {
     display: flex;
+
+    @media only screen and (max-width: $bp-small) {
+      justify-content: center;
+    }
   }
 
   &__photo {
@@ -473,6 +576,16 @@
     outline: 3px solid #fff;
     transition: all 0.2s;
 
+    @media only screen and (max-width: $bp-small) {
+      height: 3.5rem;
+      width: 3.5rem;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      height: 3rem;
+      width: 3rem;
+    }
+
     &:hover {
       outline: 3px solid var(--color-primary);
       transform: scale(1.05);
@@ -480,6 +593,14 @@
 
     &:not(:last-child) {
       margin-right: -1.5rem;
+
+      @media only screen and (max-width: $bp-small) {
+        margin-right: -1rem;
+      }
+
+      @media only screen and (max-width: $bp-smallest) {
+        margin-right: -0.8rem;
+      }
     }
   }
 }
@@ -497,9 +618,19 @@
     outline: 3px solid var(--color-primary);
   }
 
-  @media only screen and (max-width:$bp-medium) {
+  @media only screen and (max-width: $bp-medium) {
     padding: 2rem;
     margin-bottom: 3rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
   }
 
   &__text {
@@ -552,8 +683,16 @@
   padding: 3.5rem 0;
   text-align: center;
 
-  @media only screen and (max-width:$bp-medium) {
+  @media only screen and (max-width: $bp-medium) {
     padding: 2.5rem 0;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    padding: 2rem 1rem;
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    padding: 1.5rem 1rem;
   }
 
   &__book-now {
@@ -561,6 +700,16 @@
     font-size: 1.5rem;
     font-weight: 300;
     margin-bottom: 2.5rem;
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
   }
 }
 
@@ -581,10 +730,26 @@
   transition: all 0.2s;
   cursor: pointer;
 
+  @media only screen and (max-width: $bp-small) {
+    font-size: 1.3rem;
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    font-size: 1.2rem;
+  }
+
   &__visible {
     display: inline-block;
     padding: 2rem 7.5rem;
     transition: all 0.2s;
+
+    @media only screen and (max-width: $bp-small) {
+      padding: 1.5rem 5rem;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      padding: 1.2rem 4rem;
+    }
   }
 
   &__unvisible {
@@ -596,6 +761,14 @@
     left: 0;
     top: -100%;
     transition: all 0.2s;
+
+    @media only screen and (max-width: $bp-small) {
+      padding: 1.5rem 0rem;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      padding: 1.2rem 0rem;
+    }
   }
 
   &:hover {
